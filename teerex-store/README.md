@@ -1,4 +1,4 @@
-# Simple React JS Project
+# Teerex Store Project
 
 ## What is the use of this Repo
 
