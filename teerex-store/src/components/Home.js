@@ -1,40 +1,59 @@
-import React from 'react'
-import { CartState } from '../context/Context'
-import SingleProduct from './SingleProduct';
-import Filters from './Filters';
+import { CartState } from "../context/Context";
+import Filters from "./Filters";
+import SingleProduct from "./SingleProduct";
 import './styles.css'
 
 const Home = () => {
+  const {
+    state: { products },
+    productState: { byColor, byGender, byPrice, byType, searchQuery },
+  } = CartState();
 
-    const {
-        state: { products },
-        productState: { searchQuery, byColor }
-    } = CartState();
+  const transformProducts = () => {
+    let sortedProducts = products;
 
-    const transformProducts = () => {
-        let sortedProducts = products;
-        if (!byColor) {
-            sortedProducts = sortedProducts.filter((eachProd) => eachProd.color === "Black")
-        }
-        if (searchQuery) {
-            sortedProducts = sortedProducts.filter((eachProd) => eachProd.name.toLowerCase() === searchQuery.toLowerCase())
-        }
-        return sortedProducts;
+    if (searchQuery) {
+      sortedProducts = sortedProducts.filter((prod) =>
+        prod.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
     }
 
-    return (
-        <div className="home">
-            <Filters />
-            <div className="productContainer">
-                {
-                    transformProducts().map((prod) => {
-                        return <SingleProduct prod={prod} key={prod.id}></SingleProduct>
-                    })
-                }
+    if (byColor) {
+      sortedProducts = sortedProducts.filter((prod) =>
+        prod.color === byColor
+      );
+    }
+    if (byGender) {
+      sortedProducts = sortedProducts.filter((prod) =>
+        prod.gender === byGender
+      );
+    }
+    if (byPrice) {
+      sortedProducts = sortedProducts.filter((prod) =>
+        (byPrice === "0-₹250" && parseInt(prod.price) > 0 && parseInt(prod.price) <= 250) ||
+        (byPrice === "₹251-₹450" && parseInt(prod.price) > 251 && parseInt(prod.price) < 450) ||
+        (byPrice === "Above ₹450" && parseInt(prod.price) > 450)
+      );
+    }
+    if (byType) {
+      sortedProducts = sortedProducts.filter((prod) =>
+        prod.type === byType
+      );
+    }
 
-            </div>
-        </div>
-    )
-}
+    return sortedProducts;
+  };
 
-export default Home
+  return (
+    <div className="home">
+      <Filters />
+      <div className="productContainer">
+        {transformProducts().map((prod) =>
+          <SingleProduct prod={prod} key={prod.id} />
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Home;
