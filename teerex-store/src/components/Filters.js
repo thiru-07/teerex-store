@@ -23,7 +23,7 @@ const Filters = () => {
             inline
             label="Red"
             name="group1"
-            type="radio"
+            type="checkbox"
             checked={byColor === "Red"}
             onChange={(e) =>
               productDispatch({
@@ -37,7 +37,7 @@ const Filters = () => {
             inline
             label="Blue"
             name="group1"
-            type="radio"
+            type="checkbox"
             checked={byColor === "Blue"}
             onChange={(e) =>
               productDispatch({
@@ -51,7 +51,7 @@ const Filters = () => {
             inline
             label="Green"
             name="group1"
-            type="radio"
+            type="checkbox"
             checked={byColor === "Green"}
             onChange={(e) =>
               productDispatch({
@@ -69,7 +69,7 @@ const Filters = () => {
             inline
             label="Men"
             name="group2"
-            type="radio"
+            type="checkbox"
             checked={byGender === "Men"}
             onChange={(e) =>
               productDispatch({
@@ -83,7 +83,7 @@ const Filters = () => {
             inline
             label="Women"
             name="group2"
-            type="radio"
+            type="checkbox"
             checked={byGender === "Women"}
             onChange={(e) =>
               productDispatch({
@@ -101,7 +101,7 @@ const Filters = () => {
             inline
             label="0-₹250"
             name="group3"
-            type="radio"
+            type="checkbox"
             checked={byPrice === "0-₹250"}
             onChange={(e) =>
               productDispatch({
@@ -115,7 +115,7 @@ const Filters = () => {
             inline
             label="₹251-₹450"
             name="group3"
-            type="radio"
+            type="checkbox"
             checked={byPrice === "₹251-₹450"}
             onChange={(e) =>
               productDispatch({
@@ -129,7 +129,7 @@ const Filters = () => {
             inline
             label="Above ₹450"
             name="group1"
-            type="radio"
+            type="checkbox"
             checked={byPrice === "Above ₹450"}
             onChange={(e) =>
               productDispatch({
@@ -147,7 +147,7 @@ const Filters = () => {
             inline
             label="Polo"
             name="group4"
-            type="radio"
+            type="checkbox"
             checked={byType === "Polo"}
             onChange={(e) =>
               productDispatch({
@@ -161,7 +161,7 @@ const Filters = () => {
             inline
             label="Hoodie"
             name="group4"
-            type="radio"
+            type="checkbox"
             checked={byType === "Hoodie"}
             onChange={(e) =>
               productDispatch({
@@ -175,7 +175,7 @@ const Filters = () => {
             inline
             label="Basic"
             name="group4"
-            type="radio"
+            type="checkbox"
             checked={byType === "Basic"}
             onChange={(e) =>
               productDispatch({

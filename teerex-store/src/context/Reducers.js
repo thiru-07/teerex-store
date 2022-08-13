@@ -22,16 +22,17 @@ export const cartReducer = (state, action) => {
 };
 
 export const productReducer = (state, action) => {
-  switch (action.type) {
+  console.log(state, action)
 
+  switch (action.type) {
     case "FILTER_BY_COLOR":
-      return { ...state, byColor: action.payload };
+      return { ...state, byColor: state.byColor === action.payload ? "" : action.payload };
     case "FILTER_BY_GENDER":
-      return { ...state, byGender: action.payload };
+      return { ...state, byGender: state.byGender === action.payload ? "" : action.payload };
     case "FILTER_BY_PRICE":
-      return { ...state, byPrice: action.payload };
+      return { ...state, byPrice: state.byPrice === action.payload ? "" : action.payload };
     case "FILTER_BY_TYPE":
-      return { ...state, byType: action.payload };
+      return { ...state, byType: state.byType === action.payload ? "" : action.payload };
     case "FILTER_BY_SEARCH":
       return { ...state, searchQuery: action.payload };
     case "CLEAR_FILTERS":
