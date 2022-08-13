@@ -10,8 +10,8 @@ import {
   Navbar,
 } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-import { CartState } from "../context/Context";
-import "./styles.css";
+import { CartState } from "../../context/Context";
+import "./Header.css";
 
 const Header = () => {
   /**

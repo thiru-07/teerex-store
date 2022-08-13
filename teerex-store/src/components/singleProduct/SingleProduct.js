@@ -1,5 +1,6 @@
 import { Card, Button } from "react-bootstrap";
-import { CartState } from "../context/Context";
+import { CartState } from "../../context/Context";
+import "./SingleProduct.css"
 
 const SingleProduct = ({ prod }) => {
   /**

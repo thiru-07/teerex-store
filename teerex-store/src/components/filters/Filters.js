@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
-import { CartState } from "../context/Context";
+import { CartState } from "../../context/Context";
+import "./Filters.css";
 
 const Filters = () => {
   /**

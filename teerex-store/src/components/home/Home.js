@@ -1,7 +1,7 @@
-import { CartState } from "../context/Context";
-import Filters from "./Filters";
-import SingleProduct from "./SingleProduct";
-import './styles.css'
+import { CartState } from "../../context/Context";
+import Filters from "../filters/Filters";
+import SingleProduct from "../singleProduct/SingleProduct";
+import './Home.css'
 
 const Home = () => {
   /**

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap";
 import { AiFillDelete } from "react-icons/ai";
-import { CartState } from "../context/Context";
+import { CartState } from "../../context/Context";
+import "./Cart.css";
 
 const Cart = () => {
   /**
