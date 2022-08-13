@@ -4,12 +4,18 @@ import SingleProduct from "./SingleProduct";
 import './styles.css'
 
 const Home = () => {
+  /**
+   * Home Component that holds all the UI elements of the Home page.
+  */
   const {
     state: { products },
     productState: { byColor, byGender, byPrice, byType, searchQuery },
-  } = CartState();
+  } = CartState(); // Destructuring the required store variables from Context
 
   const transformProducts = () => {
+    /**
+     * Method that sorts and filters the products based on the inputs from Filter and Search bar
+    */
     let sortedProducts = products;
 
     if (searchQuery) {

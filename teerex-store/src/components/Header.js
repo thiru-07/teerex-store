@@ -14,11 +14,15 @@ import { CartState } from "../context/Context";
 import "./styles.css";
 
 const Header = () => {
+  /**
+   * Header Component that holds all the UI elements of the Top Nav bar.
+  */
+
   const {
     state: { cart },
     dispatch,
     productDispatch,
-  } = CartState();
+  } = CartState(); // Destructuring the required store variables from Context
 
   return (
     <Navbar sticky="top" bg="dark" variant="dark" style={{ height: 80 }}>

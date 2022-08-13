@@ -4,13 +4,20 @@ import { AiFillDelete } from "react-icons/ai";
 import { CartState } from "../context/Context";
 
 const Cart = () => {
+  /**
+   * Cart Component that holds all the UI elements of the Cart page.
+   */
+  const [total, setTotal] = useState();
+
   const {
     state: { cart },
     dispatch,
-  } = CartState();
-  const [total, setTotal] = useState();
+  } = CartState(); // Destructuring the required store variables from Context
 
   useEffect(() => {
+    /**
+     * Method that computes the total price of the checked out Products
+     */
     setTotal(
       cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
     );

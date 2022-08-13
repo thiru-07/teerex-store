@@ -2,10 +2,13 @@ import { Card, Button } from "react-bootstrap";
 import { CartState } from "../context/Context";
 
 const SingleProduct = ({ prod }) => {
+  /**
+   * Single Product Component that holds all the UI elements of a Single Product Card.
+   */
   const {
     state: { cart },
     dispatch,
-  } = CartState();
+  } = CartState(); // Destructuring the required store variables from Context
 
   return (
     <div className="products">

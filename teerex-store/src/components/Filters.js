@@ -3,14 +3,15 @@ import { Button, Form } from "react-bootstrap";
 import { CartState } from "../context/Context";
 
 const Filters = () => {
+  /**
+   * Filter Component that holds all the UI elements of the Filter bar.
+  */
 
   const {
     productDispatch,
     productState: { byColor, byGender, byPrice, byType },
     state,
-  } = CartState();
-
-
+  } = CartState(); // Destructuring the required store variables from Context
 
   return (
     <div className="filters">

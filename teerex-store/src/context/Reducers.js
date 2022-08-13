@@ -1,4 +1,7 @@
 export const cartReducer = (state, action) => {
+  /**
+   *Reducer function to perform actions in the product and cart page
+   */
   switch (action.type) {
     case "ADD_PRODUCTS":
       return { ...state, products: action.payload }
@@ -22,7 +25,9 @@ export const cartReducer = (state, action) => {
 };
 
 export const productReducer = (state, action) => {
-  console.log(state, action)
+  /**
+   *Reducer function to perform actions in the product page based on the filter selection
+   */
 
   switch (action.type) {
     case "FILTER_BY_COLOR":
